@@ -1,0 +1,49 @@
+.gallery {
+  min-width: 0;
+}
+
+.main {
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #f7f7f7;
+  --swiper-navigation-color: #829b91;
+  --swiper-navigation-size: 28px;
+}
+
+.mainImage {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.thumbnailButton {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background-color: #f7f7f7;
+}
+
+.thumbnailButton[aria-pressed="true"] {
+  border-color: #829b91;
+}
+
+.thumbnailButton:focus-visible {
+  outline: 2px solid #829b91;
+  outline-offset: 3px;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 144px;
+  object-fit: cover;
+}

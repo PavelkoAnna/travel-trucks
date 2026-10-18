@@ -1,0 +1,172 @@
+.form {
+  padding: 24px;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+}
+
+.locationGroup {
+  margin-bottom: 40px;
+}
+
+.label,
+.legend {
+  color: #6c717b;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.inputWrapper:focus-within {
+  border-color: #829b91;
+}
+
+.inputWrapper svg {
+  flex-shrink: 0;
+  color: #475467;
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #101828;
+  line-height: 24px;
+}
+
+.input::placeholder {
+  color: #6c717b;
+}
+
+.title {
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.radio {
+  appearance: none;
+  display: grid;
+  flex-shrink: 0;
+  place-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 1px solid #475467;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.radio::before {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #475467;
+  transform: scale(0);
+  content: "";
+}
+
+.radio:checked::before {
+  transform: scale(1);
+}
+
+.radio:focus-visible {
+  outline: 2px solid #829b91;
+  outline-offset: 3px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.searchButton,
+.clearButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 56px;
+  padding: 16px;
+  border-radius: 200px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.searchButton {
+  border: 1px solid transparent;
+  background-color: #829b91;
+  color: #ffffff;
+}
+
+.searchButton:hover {
+  background-color: #6d7b75;
+}
+
+.clearButton {
+  border: 1px solid #dadde1;
+  background-color: #ffffff;
+  color: #101828;
+}
+
+.clearButton:hover {
+  border-color: #6d7b75;
+}
+
+.searchButton:focus-visible,
+.clearButton:focus-visible {
+  outline: 2px solid #6d7b75;
+  outline-offset: 3px;
+}

@@ -1,0 +1,63 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list > li {
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #f7f7f7;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #829b91;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.name {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.filledStar {
+  color: #ffc531;
+}
+
+.emptyStar {
+  color: #dadde1;
+}
+
+.comment {
+  margin: 0;
+  color: #475467;
+  line-height: 24px;
+}

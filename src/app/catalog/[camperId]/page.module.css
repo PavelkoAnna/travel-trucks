@@ -1,0 +1,148 @@
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px 64px 120px;
+}
+
+.topLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.galleryColumn,
+.infoColumn,
+.reviewsColumn {
+  min-width: 0;
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summary,
+.features {
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #f7f7f7;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.meta p {
+  margin: 0;
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star {
+  color: #ffc531;
+}
+
+.price {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.description {
+  margin: 0;
+  color: #475467;
+  line-height: 24px;
+}
+
+.sectionTitle {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0 0 16px;
+  border-bottom: 1px solid #dadde1;
+  list-style: none;
+}
+
+.badge {
+  padding: 12px 18px;
+  border-radius: 100px;
+  background-color: #e8eaed;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 16px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.details dt,
+.details dd {
+  margin: 0;
+}
+
+.details dd {
+  text-align: right;
+}
+
+.reviewsSection {
+  margin-top: 80px;
+}
+
+.reviewsTitle {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.bottomLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 48px;
+}
+
+.retryButton {
+  padding: 16px 32px;
+  border: 0;
+  border-radius: 200px;
+  background-color: #829b91;
+  color: #ffffff;
+}
+
+.retryButton:hover {
+  background-color: #6d7b75;
+}

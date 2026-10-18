@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TravelTrucks
 
-## Getting Started
+TravelTrucks — мій навчальний проєкт для пошуку та оренди кемперів. Тут можна підібрати кемпер для подорожі, переглянути фотографії, почитати відгуки та залишити заявку на бронювання.
 
-First, run the development server:
+На головній сторінці є кнопка переходу до каталогу. У каталозі можна шукати кемпери за містом, типом кузова, двигуном і трансмісією. Кнопка Load more додає ще чотири картки з урахуванням вибраних фільтрів, а Clear filters скидає пошук.
+
+Деталі кемпера відкриваються в новій вкладці. На сторінці є галерея з мініатюрами, характеристики, відгуки з оцінками та форма бронювання. Для заявки потрібно ввести ім’я й email. Форма перевіряє поля та показує повідомлення після успішного надсилання.
+
+Проєкт створений на Next.js із TypeScript та App Router. Для запитів і пагінації використала TanStack Query, для галереї — Swiper, для іконок — React Icons. Стилі написані через CSS Modules. Реалізована десктопна версія.
+
+## Як запустити
+
+Клонуйте репозиторій і відкрийте папку проєкту в терміналі. Для роботи потрібні Node.js і npm.
+
+Встановіть залежності:
+
+```bash
+npm ci
+```
+
+Запустіть проєкт:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Відкрийте в браузері http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Для перевірки коду:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npx eslint .
+```
 
-## Learn More
+Для створення production-збірки та її запуску:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Дані кемперів і заявки обробляє API: https://campers-api.goit.study. Документація доступна за адресою https://campers-api.goit.study/docs. Додаткові змінні середовища для запуску не потрібні.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Авторка
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Anna Pavelko  
+GitHub: https://github.com/PavelkoAnna
