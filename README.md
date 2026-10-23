@@ -1,49 +1,83 @@
-# TravelTrucks
+# 🧭 TravelTrucks
 
-TravelTrucks — мій навчальний проєкт для пошуку та оренди кемперів. Тут можна підібрати кемпер для подорожі, переглянути фотографії, почитати відгуки та залишити заявку на бронювання.
+![TravelTrucks](public/hero.jpg)
 
-Переглянути сайт: https://travel-trucks-gules-chi.vercel.app
+Find your camper and head somewhere new.
 
-На головній сторінці є кнопка переходу до каталогу. У каталозі можна шукати кемпери за містом, типом кузова, двигуном і трансмісією. Кнопка Load more додає ще чотири картки з урахуванням вибраних фільтрів, а Clear filters скидає пошук.
+TravelTrucks is my learning project for finding and renting campervans. You can choose a vehicle for your next trip, explore its interior, read reviews, and submit a booking request.
 
-Деталі кемпера відкриваються в новій вкладці. На сторінці є галерея з мініатюрами, характеристики, відгуки з оцінками та форма бронювання. Для заявки потрібно ввести ім’я й email. Форма перевіряє поля та показує повідомлення після успішного надсилання.
+**[Visit the website](https://travel-trucks-gules-chi.vercel.app/) | [View the repository](https://github.com/PavelkoAnna/travel-trucks)**
 
-Проєкт створений на Next.js із TypeScript та App Router. Для запитів і пагінації використала TanStack Query, для галереї — Swiper, для іконок — React Icons. Стилі написані через CSS Modules. Реалізована десктопна версія.
+## What you can do
 
-## Як запустити
+🔎 **Find your camper**  
+Search by city, vehicle type, engine, and transmission. **Load more** adds four more campers while keeping your filters active, and **Clear filters** resets your search.
 
-Клонуйте репозиторій і відкрийте папку проєкту в терміналі. Для роботи потрібні Node.js і npm.
+🖼️ **Explore the details**  
+Each camper’s details page opens in a new tab. It includes an image gallery with thumbnails, vehicle specifications, and reviews with five-star ratings.
 
-Встановіть залежності:
+✉️ **Send a booking request**  
+Enter your name and email to submit a request. The form validates your details and displays a success message or an error.
+
+A loading indicator appears while data is being fetched. If no campers match your search, you can clear the filters and return to the full catalog.
+
+## On different screens
+
+The interface adapts to desktops, tablets, and phones. On mobile, filters can be expanded and collapsed, cards use a vertical layout, and the gallery and booking form adjust to the screen width.
+
+## Technologies
+
+**Next.js | TypeScript | React | TanStack Query | CSS Modules | Swiper | React Icons**
+
+Routing uses the Next.js App Router. I used `useInfiniteQuery` for pagination, `useQuery` to fetch camper details and reviews, and `useMutation` to submit booking requests.
+
+## Run locally
+
+You’ll need Node.js and npm.
+
+Clone the repository:
+
+```bash
+git clone https://github.com/PavelkoAnna/travel-trucks.git
+cd travel-trucks
+```
+
+Install dependencies and start the development server:
 
 ```bash
 npm ci
-```
-
-Запустіть проєкт:
-
-```bash
 npm run dev
 ```
 
-Відкрийте в браузері http://localhost:3000.
+Open the [local website](http://localhost:3000).
 
-Для перевірки коду:
+No environment variables are required. An internet connection is needed to fetch data and submit booking requests.
+
+## Checks and production build
+
+Check the code:
 
 ```bash
 npx eslint .
 ```
 
-Для створення production-збірки та її запуску:
+Create a production build and run it locally:
 
 ```bash
 npm run build
 npm start
 ```
 
-Дані кемперів і заявки обробляє API: https://campers-api.goit.study. Документація доступна за адресою https://campers-api.goit.study/docs. Додаткові змінні середовища для запуску не потрібні.
+## Data
 
-## Авторка
+The application uses the TravelTrucks API to fetch the catalog, camper details, and reviews, and to submit booking requests.
 
-Anna Pavelko  
-GitHub: https://github.com/PavelkoAnna
+[API documentation](https://campers-api.goit.study/docs)
+
+## Author
+
+**Anna Pavelko**
+
+A learning project where I worked with Next.js, server-side filtering, pagination, and responsive layouts.
+
+[My GitHub](https://github.com/PavelkoAnna)
