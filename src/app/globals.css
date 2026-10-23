@@ -9,6 +9,9 @@ body {
   background-color: #ffffff;
   color: #101828;
   font-family: var(--font-inter), sans-serif;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {

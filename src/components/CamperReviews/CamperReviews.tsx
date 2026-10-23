@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCamperReviews } from "@/lib/campers-api";
 import styles from "./CamperReviews.module.css";
+import { FaStar } from "react-icons/fa";
 
 interface CamperReviewsProps {
   camperId: string;
@@ -59,17 +60,16 @@ export default function CamperReviews({ camperId }: CamperReviewsProps) {
                 aria-label={`${review.reviewer_rating} out of 5 stars`}
               >
                 {Array.from({ length: 5 }, (_, index) => (
-                  <span
+                  <FaStar
                     key={index}
+                    size={16}
                     className={
                       index < review.reviewer_rating
                         ? styles.filledStar
                         : styles.emptyStar
                     }
                     aria-hidden="true"
-                  >
-                    ★
-                  </span>
+                  />
                 ))}
               </div>
             </div>

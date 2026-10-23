@@ -60,8 +60,8 @@
 }
 
 .star {
+  flex-shrink: 0;
   color: #ffc531;
-  font-size: 18px;
 }
 
 .description {

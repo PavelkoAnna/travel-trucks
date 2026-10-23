@@ -8,6 +8,7 @@ import CamperGallery from "@/components/CamperGallery/CamperGallery";
 import CamperReviews from "@/components/CamperReviews/CamperReviews";
 import BookingForm from "@/components/BookingForm/BookingForm";
 import styles from "./page.module.css";
+import { FaStar } from "react-icons/fa";
 
 const formLabels: Record<string, string> = {
   panel_van: "Panel van",
@@ -101,11 +102,12 @@ export default function CamperDetailsPage() {
             <h1 className={styles.title}>{camper.name}</h1>
 
             <div className={styles.meta}>
-              <p>
-                <span className={styles.star} aria-hidden="true">
-                  ★
-                </span>{" "}
-                {camper.rating} ({camper.totalReviews} Reviews)
+              <p className={styles.rating}>
+                <FaStar className={styles.star} size={16} aria-hidden="true" />
+
+                <span>
+                  {camper.rating.toFixed(1)}({camper.totalReviews} Reviews)
+                </span>
               </p>
 
               <p className={styles.location}>

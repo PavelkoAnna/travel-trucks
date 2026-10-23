@@ -43,9 +43,12 @@
 
 .stars {
   display: flex;
-  gap: 2px;
-  font-size: 20px;
-  line-height: 24px;
+  align-items: center;
+  gap: 4px;
+}
+
+.stars svg {
+  flex-shrink: 0;
 }
 
 .filledStar {

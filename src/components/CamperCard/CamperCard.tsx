@@ -3,6 +3,7 @@ import Link from "next/link";
 import { LuCar, LuFuel, LuMap, LuSettings } from "react-icons/lu";
 import type { Camper } from "@/types/camper";
 import styles from "./CamperCard.module.css";
+import { FaStar } from "react-icons/fa";
 
 interface CamperCardProps {
   camper: Camper;
@@ -27,7 +28,7 @@ function formatLocation(location: string) {
 
 export default function CamperCard({ camper }: CamperCardProps) {
   return (
-    <article className={styles.card}>
+    <li className={styles.card}>
       <Image
         className={styles.image}
         src={camper.coverImage}
@@ -45,10 +46,11 @@ export default function CamperCard({ camper }: CamperCardProps) {
 
         <div className={styles.meta}>
           <p className={styles.rating}>
-            <span className={styles.star} aria-hidden="true">
-              ★
-            </span>{" "}
-            {camper.rating} ({camper.totalReviews} Reviews)
+            <FaStar className={styles.star} size={16} aria-hidden="true" />
+
+            <span>
+              {camper.rating.toFixed(1)}({camper.totalReviews} Reviews)
+            </span>
           </p>
 
           <p className={styles.location}>
@@ -85,6 +87,6 @@ export default function CamperCard({ camper }: CamperCardProps) {
           Show more
         </Link>
       </div>
-    </article>
+    </li>
   );
 }

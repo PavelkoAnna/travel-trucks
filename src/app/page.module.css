@@ -1,7 +1,13 @@
+.home {
+  display: flex;
+  flex: 1;
+}
+
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: 696px;
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
   padding: 185px 64px 80px;
 }

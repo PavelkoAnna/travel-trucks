@@ -11,13 +11,48 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const title = "TravelTrucks — Camper Rental";
+
+const description =
+  "Find your perfect camper with TravelTrucks. Browse campervans, compare features, read reviews, and send a booking request.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://travel-trucks-gules-chi.vercel.app"),
+
   title: {
-    default: "TravelTrucks — Camper Rental",
+    default: title,
     template: "%s | TravelTrucks",
   },
-  description:
-    "Find your perfect camper with TravelTrucks. Browse campervans, compare features, read reviews, and send a booking request.",
+
+  description,
+
+  authors: [
+    {
+      name: "Anna Pavelko",
+      url: "https://github.com/PavelkoAnna",
+    },
+  ],
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "TravelTrucks",
+    title,
+    description,
+    images: [
+      {
+        url: "/hero.jpg",
+        alt: "TravelTrucks campervan by a lake",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/hero.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
