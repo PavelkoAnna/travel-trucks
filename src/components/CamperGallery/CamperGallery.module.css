@@ -47,3 +47,39 @@
   height: 144px;
   object-fit: cover;
 }
+
+@media (max-width: 1024px) {
+  .mainImage {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .thumbnailImage {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .thumbnails {
+    gap: 16px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main {
+    --swiper-navigation-size: 22px;
+  }
+
+  .thumbnails {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .thumbnailButton {
+    border-radius: 10px;
+  }
+
+  .thumbnailImage {
+    aspect-ratio: 1;
+  }
+}

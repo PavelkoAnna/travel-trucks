@@ -35,7 +35,7 @@ export default function CamperCard({ camper }: CamperCardProps) {
         alt={camper.name}
         width={220}
         height={240}
-        sizes="220px"
+        sizes="(max-width: 767px) calc(100vw - 64px), 220px"
       />
 
       <div className={styles.content}>

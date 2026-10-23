@@ -170,3 +170,50 @@
   outline: 2px solid #6d7b75;
   outline-offset: 3px;
 }
+
+@media (max-width: 1200px) {
+  .locationGroup {
+    margin-bottom: 24px;
+  }
+
+  .groups {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .option {
+    min-height: 44px;
+  }
+
+  .actions {
+    flex-direction: row;
+    margin-top: 24px;
+  }
+
+  .searchButton,
+  .clearButton {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .form {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .groups {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .options {
+    gap: 0;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

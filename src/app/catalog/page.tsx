@@ -9,6 +9,7 @@ import CamperCard from "@/components/CamperCard/CamperCard";
 import CatalogFilters from "@/components/CatalogFilters/CatalogFilters";
 import type { CamperFilters } from "@/types/camper";
 import styles from "./page.module.css";
+import FiltersPanel from "@/components/CatalogFilters/FiltersPanel";
 
 const initialFilters: CamperFilters = {
   location: "",
@@ -53,7 +54,9 @@ export default function CatalogPage() {
 
       <div className={styles.layout}>
         <aside aria-label="Catalog filters">
-          <CatalogFilters key={filtersKey} onSearch={setFilters} />
+          <FiltersPanel>
+            <CatalogFilters key={filtersKey} onSearch={setFilters} />
+          </FiltersPanel>
         </aside>
 
         <section

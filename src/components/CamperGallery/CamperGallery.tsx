@@ -50,7 +50,7 @@ export default function CamperGallery({
               alt={`${camperName} — photo ${index + 1}`}
               width={1200}
               height={480}
-              sizes="(max-width: 1440px) 50vw, 644px"
+              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 64px), (max-width: 1440px) calc((100vw - 152px) / 2), 644px"
             />
           </SwiperSlide>
         ))}
@@ -76,7 +76,7 @@ export default function CamperGallery({
               alt=""
               width={292}
               height={120}
-              sizes="(max-width: 1440px) 12vw, 143px"
+              sizes="(max-width: 767px) calc((100vw - 56px) / 4), (max-width: 1024px) calc((100vw - 112px) / 4), (max-width: 1440px) calc((100vw - 296px) / 8), 143px"
             />
           </button>
         ))}

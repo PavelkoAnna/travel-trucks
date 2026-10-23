@@ -1,0 +1,55 @@
+.panel {
+  min-width: 0;
+}
+
+.toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .panel {
+    overflow: hidden;
+    border: 1px solid #dadde1;
+    border-radius: 16px;
+    background-color: #f7f7f7;
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    padding: 16px;
+    color: #101828;
+    font-weight: 600;
+    line-height: 24px;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .toggle:focus-visible {
+    outline: 2px solid #829b91;
+    outline-offset: -4px;
+  }
+
+  .arrow {
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+    border-right: 2px solid #475467;
+    border-bottom: 2px solid #475467;
+    transform: rotate(45deg);
+  }
+
+  .panel[open] > .toggle {
+    border-bottom: 1px solid #dadde1;
+  }
+
+  .panel[open] > .toggle .arrow {
+    transform: rotate(225deg);
+  }
+}

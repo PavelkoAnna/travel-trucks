@@ -123,3 +123,69 @@
   outline: 2px solid #6d7b75;
   outline-offset: 3px;
 }
+
+@media (max-width: 767px) {
+  .card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .heading {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .title,
+  .price {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .title {
+    overflow-wrap: anywhere;
+  }
+
+  .meta {
+    gap: 8px 12px;
+    margin-bottom: 16px;
+  }
+
+  .location {
+    flex-wrap: wrap;
+  }
+
+  .description {
+    display: -webkit-box;
+    margin-bottom: 16px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .features {
+    margin-bottom: 20px;
+  }
+
+  .feature {
+    padding: 10px 12px;
+  }
+
+  .button {
+    width: 100%;
+    min-width: 0;
+  }
+}

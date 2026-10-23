@@ -152,3 +152,75 @@
 .retryButton:hover {
   background-color: #6d7b75;
 }
+@media (max-width: 1024px) {
+  .page {
+    width: 100%;
+    padding: 32px 32px 64px;
+  }
+
+  .topLayout,
+  .bottomLayout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .reviewsSection {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding: 24px 16px 48px;
+  }
+
+  .topLayout,
+  .bottomLayout {
+    gap: 24px;
+  }
+
+  .summary,
+  .features {
+    padding: 20px 16px;
+  }
+
+  .title,
+  .sectionTitle,
+  .reviewsTitle {
+    font-size: 22px;
+    line-height: 28px;
+    overflow-wrap: anywhere;
+  }
+
+  .price {
+    margin-bottom: 16px;
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .description {
+    overflow-wrap: anywhere;
+  }
+
+  .badge {
+    padding: 10px 12px;
+  }
+
+  .details {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .details dt,
+  .details dd {
+    overflow-wrap: anywhere;
+  }
+
+  .reviewsSection {
+    margin-top: 32px;
+  }
+
+  .reviewsTitle {
+    margin-bottom: 20px;
+  }
+}

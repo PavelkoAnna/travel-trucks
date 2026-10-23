@@ -67,3 +67,64 @@
   outline: 2px solid #ffffff;
   outline-offset: 4px;
 }
+
+@media (max-width: 1024px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    padding: 80px 32px;
+  }
+
+  .content {
+    max-width: 640px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 1.15;
+  }
+
+  .description {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 64px 16px;
+  }
+
+  .hero::before {
+    background-image:
+      linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)), url("/hero.jpg");
+  }
+
+  .content {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  .description {
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .button {
+    min-height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}

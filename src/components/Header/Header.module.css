@@ -39,3 +39,36 @@
 .active {
   color: #829b91;
 }
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 20px 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 72px;
+    padding: 14px 16px;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    font-size: 20px;
+  }
+
+  .nav {
+    position: static;
+    gap: 12px;
+    transform: none;
+  }
+
+  .navLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 14px;
+  }
+}

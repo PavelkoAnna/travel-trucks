@@ -34,3 +34,6 @@ img {
   display: block;
   max-width: 100%;
 }
+html {
+  min-width: 320px;
+}

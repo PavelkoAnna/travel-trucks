@@ -64,3 +64,29 @@
   color: #475467;
   line-height: 24px;
 }
+
+@media (max-width: 767px) {
+  .list {
+    gap: 16px;
+  }
+
+  .heading {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .heading > div {
+    min-width: 0;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .name,
+  .comment {
+    overflow-wrap: anywhere;
+  }
+}

@@ -155,3 +155,46 @@
   font-size: 14px;
   line-height: 20px;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .form {
+    gap: 20px;
+  }
+
+  .fields {
+    gap: 20px;
+  }
+
+  .input {
+    min-height: 56px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .description,
+  .fieldError,
+  .success,
+  .error {
+    overflow-wrap: anywhere;
+  }
+}
