@@ -1,6 +1,6 @@
 # 🧭 TravelTrucks
 
-![TravelTrucks](public/hero.jpg)
+![TravelTrucks homepage](docs/images/home.png)
 
 Find your camper and head somewhere new.
 
