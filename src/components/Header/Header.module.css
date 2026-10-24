@@ -9,6 +9,7 @@
 }
 
 .logo {
+  flex-shrink: 0;
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
@@ -22,52 +23,89 @@
   position: absolute;
   left: 50%;
   display: flex;
+  align-items: center;
   gap: 32px;
   transform: translateX(-50%);
 }
 
 .navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 500;
   line-height: 24px;
+  white-space: nowrap;
 }
 
 .navLink:hover,
-.navLink:focus-visible {
-  color: #829b91;
-}
-
 .active {
   color: #829b91;
 }
 
+.navLink:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid #829b91;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 100px;
+  background-color: #829b91;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 @media (max-width: 1024px) {
   .header {
+    justify-content: space-between;
+    gap: 24px;
     padding: 20px 32px;
+  }
+
+  .nav {
+    position: static;
+    gap: 24px;
+    transform: none;
   }
 }
 
 @media (max-width: 767px) {
   .header {
-    justify-content: space-between;
-    gap: 16px;
-    min-height: 72px;
-    padding: 14px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px 16px 8px;
   }
 
   .logo {
-    flex-shrink: 0;
     font-size: 20px;
   }
 
   .nav {
-    position: static;
-    gap: 12px;
-    transform: none;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
   }
 
   .navLink {
-    display: inline-flex;
-    align-items: center;
     min-height: 44px;
     font-size: 14px;
   }

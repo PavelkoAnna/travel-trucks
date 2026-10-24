@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { LuCar, LuFuel, LuMap, LuSettings } from "react-icons/lu";
+import { FaStar } from "react-icons/fa";
+import { LuCar, LuFuel, LuHeart, LuMap, LuSettings } from "react-icons/lu";
+import { useFavorites } from "@/context/FavoritesContext";
 import type { Camper } from "@/types/camper";
 import styles from "./CamperCard.module.css";
-import { FaStar } from "react-icons/fa";
 
 interface CamperCardProps {
   camper: Camper;
@@ -27,6 +30,10 @@ function formatLocation(location: string) {
 }
 
 export default function CamperCard({ camper }: CamperCardProps) {
+  const { favorites, isReady, toggleFavorite } = useFavorites();
+
+  const isFavorite = favorites.some((item) => item.id === camper.id);
+
   return (
     <li className={styles.card}>
       <Image
@@ -41,7 +48,27 @@ export default function CamperCard({ camper }: CamperCardProps) {
       <div className={styles.content}>
         <div className={styles.heading}>
           <h2 className={styles.title}>{camper.name}</h2>
-          <p className={styles.price}>€{camper.price}</p>
+
+          <div className={styles.priceActions}>
+            <p className={styles.price}>€{camper.price}</p>
+
+            <button
+              className={`${styles.favoriteButton} ${
+                isFavorite ? styles.favoriteActive : ""
+              }`}
+              type="button"
+              disabled={!isReady}
+              aria-pressed={isFavorite}
+              aria-label={`Save ${camper.name} to favorites`}
+              onClick={() => toggleFavorite(camper)}
+            >
+              <LuHeart
+                size={24}
+                fill={isFavorite ? "currentColor" : "none"}
+                aria-hidden="true"
+              />
+            </button>
+          </div>
         </div>
 
         <div className={styles.meta}>

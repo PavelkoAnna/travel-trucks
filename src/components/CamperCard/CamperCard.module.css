@@ -189,3 +189,45 @@
     min-width: 0;
   }
 }
+.priceActions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.favoriteButton {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #475467;
+}
+
+.favoriteButton:hover,
+.favoriteActive {
+  color: #6d7b75;
+}
+
+.favoriteButton:focus-visible {
+  outline: 2px solid #829b91;
+  outline-offset: 2px;
+}
+
+.favoriteButton:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+  .priceActions {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
