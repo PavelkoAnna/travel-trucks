@@ -18,6 +18,10 @@ Search by city, vehicle type, engine, and transmission. **Load more** adds four 
 
 Each camper’s details page opens in a new tab. It includes an image gallery with thumbnails, vehicle specifications, and reviews with five-star ratings.
 
+⚖️ **Compare campers**
+
+Select up to three campers and compare their prices, dimensions, engines, transmissions, and equipment. On mobile, choose two campers to view side by side while keeping the third saved. Photos are optional on tablets and phones. Your selection stays in the same browser after reloading.
+
 ❤️ **Save your favorites**
 
 Tap the heart on a camper card to save it. Visit **Favorites** to view or remove saved campers. Your selection stays in the same browser after reloading — no account needed.

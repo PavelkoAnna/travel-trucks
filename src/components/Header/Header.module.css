@@ -1,11 +1,12 @@
 .header {
-  position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 32px;
   min-height: 72px;
-  padding: 24px 64px;
-  background-color: #f7f7f7;
+  padding: 20px 64px;
   border-bottom: 1px solid #f2f4f7;
+  background-color: #f7f7f7;
 }
 
 .logo {
@@ -20,18 +21,18 @@
 }
 
 .nav {
-  position: absolute;
-  left: 50%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 32px;
-  transform: translateX(-50%);
+  justify-content: flex-end;
+  gap: 8px 24px;
 }
 
 .navLink {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  min-height: 44px;
   font-weight: 500;
   line-height: 24px;
   white-space: nowrap;
@@ -75,15 +76,16 @@
 
 @media (max-width: 1024px) {
   .header {
-    justify-content: space-between;
     gap: 24px;
-    padding: 20px 32px;
+    padding: 16px 32px;
   }
 
   .nav {
-    position: static;
-    gap: 24px;
-    transform: none;
+    gap: 8px 16px;
+  }
+
+  .logo {
+    font-size: 22px;
   }
 }
 
@@ -91,8 +93,8 @@
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
-    padding: 16px 16px 8px;
+    gap: 12px;
+    padding: 16px;
   }
 
   .logo {
@@ -100,13 +102,22 @@
   }
 
   .nav {
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     width: 100%;
   }
 
   .navLink {
-    min-height: 44px;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #ffffff;
     font-size: 14px;
+  }
+
+  .active {
+    background-color: #e8efeb;
+    color: #475467;
   }
 }

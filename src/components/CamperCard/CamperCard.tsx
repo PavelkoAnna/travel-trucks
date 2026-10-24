@@ -3,8 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
-import { LuCar, LuFuel, LuHeart, LuMap, LuSettings } from "react-icons/lu";
+import {
+  LuCar,
+  LuCheck,
+  LuFuel,
+  LuHeart,
+  LuMap,
+  LuScale,
+  LuSettings,
+} from "react-icons/lu";
 import { useFavorites } from "@/context/FavoritesContext";
+import { MAX_COMPARE, useCompare } from "@/context/CompareContext";
 import type { Camper } from "@/types/camper";
 import styles from "./CamperCard.module.css";
 
@@ -30,9 +39,16 @@ function formatLocation(location: string) {
 }
 
 export default function CamperCard({ camper }: CamperCardProps) {
-  const { favorites, isReady, toggleFavorite } = useFavorites();
+  const { favorites, isReady: favoritesReady, toggleFavorite } = useFavorites();
+
+  const { comparison, isReady: comparisonReady, toggleCompare } = useCompare();
 
   const isFavorite = favorites.some((item) => item.id === camper.id);
+  const isCompared = comparison.some((item) => item.id === camper.id);
+
+  const limitReached = comparison.length >= MAX_COMPARE && !isCompared;
+
+  const limitMessageId = `compare-limit-${camper.id}`;
 
   return (
     <li className={styles.card}>
@@ -57,7 +73,7 @@ export default function CamperCard({ camper }: CamperCardProps) {
                 isFavorite ? styles.favoriteActive : ""
               }`}
               type="button"
-              disabled={!isReady}
+              disabled={!favoritesReady}
               aria-pressed={isFavorite}
               aria-label={`Save ${camper.name} to favorites`}
               onClick={() => toggleFavorite(camper)}
@@ -105,14 +121,42 @@ export default function CamperCard({ camper }: CamperCardProps) {
           </li>
         </ul>
 
-        <Link
-          className={styles.button}
-          href={`/catalog/${camper.id}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Show more
-        </Link>
+        <div className={styles.cardActions}>
+          <Link
+            className={styles.button}
+            href={`/catalog/${camper.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Show more
+          </Link>
+
+          <button
+            className={`${styles.compareButton} ${
+              isCompared ? styles.compareActive : ""
+            }`}
+            type="button"
+            disabled={!comparisonReady || limitReached}
+            aria-pressed={isCompared}
+            aria-label={`Compare ${camper.name}`}
+            aria-describedby={limitReached ? limitMessageId : undefined}
+            onClick={() => toggleCompare(camper)}
+          >
+            {isCompared ? (
+              <LuCheck size={20} aria-hidden="true" />
+            ) : (
+              <LuScale size={20} aria-hidden="true" />
+            )}
+
+            {isCompared ? "Selected" : "Compare"}
+          </button>
+        </div>
+
+        {limitReached && (
+          <p className={styles.compareHint} id={limitMessageId}>
+            Three campers selected. Remove one to add another.
+          </p>
+        )}
       </div>
     </li>
   );

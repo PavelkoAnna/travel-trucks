@@ -3,15 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useFavorites } from "@/context/FavoritesContext";
+import { useCompare } from "@/context/CompareContext";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const pathname = usePathname();
-  const { favorites, isReady } = useFavorites();
+
+  const { favorites, isReady: favoritesReady } = useFavorites();
+  const { comparison, isReady: comparisonReady } = useCompare();
 
   const isHome = pathname === "/";
   const isCatalog = pathname === "/catalog" || pathname.startsWith("/catalog/");
   const isFavorites = pathname === "/favorites";
+  const isCompare = pathname === "/compare";
 
   return (
     <header className={styles.header}>
@@ -42,10 +46,24 @@ export default function Header() {
           aria-current={isFavorites ? "page" : undefined}
         >
           Favorites
-          {isReady && favorites.length > 0 && (
+          {favoritesReady && favorites.length > 0 && (
             <span className={styles.count}>
               <span className={styles.visuallyHidden}>Saved campers:</span>
               {favorites.length}
+            </span>
+          )}
+        </Link>
+
+        <Link
+          href="/compare"
+          className={`${styles.navLink} ${isCompare ? styles.active : ""}`}
+          aria-current={isCompare ? "page" : undefined}
+        >
+          Compare
+          {comparisonReady && comparison.length > 0 && (
+            <span className={styles.count}>
+              <span className={styles.visuallyHidden}>Selected campers:</span>
+              {comparison.length}
             </span>
           )}
         </Link>
